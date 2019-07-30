@@ -1,0 +1,27 @@
+.footerList {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+}
+.footerList .footerItem {
+  display: flex;
+}
+.footerList .footerItem .guideItem {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+.footerList .footerItem .guideItem span {
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.footerList .footerItem .guideItem span .iconfont {
+  font-size: 22px;
+}
