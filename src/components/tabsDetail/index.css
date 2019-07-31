@@ -1,0 +1,123 @@
+.tdComent {
+  width: 100%;
+  height: 300px;
+  padding: 96px 0 52px;
+/* 内容评论 */
+/* 评论 */
+}
+.tdComent .tdComment {
+  width: 100%;
+  padding-top: 96px;
+}
+.tdComent .tdComment .tdComentBigPic {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.tdComent .tdComment .tdComentBigPic img {
+  width: 100%;
+}
+.tdComent .tdComment .selectWomen {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+}
+.tdComent .tdComment .selectWomen .selectTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.tdComent .tdComment .selectWomen .selectTop .selectBigPic {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.tdComent .tdComment .selectWomen .selectTop span {
+  color: #000;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.tdComent .tdComment .selectWomen .selectContent {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #000;
+  overflow: hidden;
+}
+.tdComent .tdComment .selectWomen .selectBG {
+  margin-top: 10px;
+}
+.tdComent .tdComment .selectWomen .selectBG img {
+  width: 100%;
+  height: 200px;
+}
+.tdComent .tdComment .selectWomen .selectLook {
+  display: flex;
+  align-items: center;
+}
+.tdComent .tdComment .selectWomen .selectLook i {
+  font-size: 25px;
+}
+.tdComent .tdComment .selectWomen .selectLook span {
+  margin-left: 5px;
+  font-size: 18px;
+}
+.tdComent .userComment {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #fff;
+}
+.tdComent .userComment li {
+  width: 100%;
+  display: flex;
+/* 评论右侧 */
+}
+.tdComent .userComment li .commentLeft {
+  width: 60%;
+  background-color: #fff;
+}
+.tdComent .userComment li .commentLeft .userPicText {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.tdComent .userComment li .commentLeft .userPicText img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.tdComent .userComment li .commentLeft .userPicText span {
+  font-size: 18px;
+  margin-left: 10px;
+}
+.tdComent .userComment li .commentLeft .userContent {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.tdComent .userComment li .commentLeft .userSuggest {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #c0c0c0;
+}
+.tdComent .userComment li .commentLeft .userLook {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.tdComent .userComment li .commentLeft .userLook i {
+  font-size: 25px;
+}
+.tdComent .userComment li .commentLeft .userLook span {
+  margin-left: 5px;
+  font-size: 18px;
+}
+.tdComent .userComment li .commentRight {
+  width: 40%;
+}
+.tdComent .userComment li .commentRight img {
+  width: 100%;
+  height: 120px;
+  border-radius: 5px;
+}

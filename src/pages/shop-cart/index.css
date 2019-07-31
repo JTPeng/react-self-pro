@@ -1,0 +1,70 @@
+.shopCartContainer {
+  width: 100%;
+}
+.shopCartContainer .scHeader {
+  width: 100%;
+}
+.shopCartContainer .scHeader .headerTop {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.shopCartContainer .scHeader .headerTop div {
+  font-size: 20px;
+}
+.shopCartContainer .scHeader .headerTop a {
+  font-size: 18px;
+  color: #f00;
+}
+.shopCartContainer .scHeader .headerBottom {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  background-color: #eee;
+}
+.shopCartContainer .scHeader .headerBottom .hbList {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.shopCartContainer .scHeader .headerBottom .hbList a {
+  color: #666;
+}
+/* 背景图 */
+.scContent {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background-color: #f4f4f4;
+}
+.scContent .bcBtn {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-30%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scContent .bcBtn .bcImg {
+  width: 222px;
+  height: 222px;
+  background-image: url("./images/backImage.png");
+}
+.scContent .bcBtn .scButton {
+  width: 222px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background-color: #b4282d;
+}

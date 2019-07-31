@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom'
+import { Switch, Route, Redirect, NavLink, withRouter } from 'react-router-dom'
 import Main from '../../pages/main/index'
 import Personal from '../../pages/personal/index'
 import ShopCart from '../../pages/shop-cart/index'
 import Topic from '../../pages/topic/index'
 import Category from '../../pages/category/index'
 import './index.css'
-export default class FooterGuide extends Component {
+class FooterGuide extends Component {
   render() {
+    const { pathname } = this.props.location
+    console.log(pathname)
+    let isShow =( pathname === '/personal' || pathname ==='/shopcart') ? true : false
+    console.log(isShow)
+    console.log(pathname)
     return (
       <div>
         <Switch>
@@ -18,7 +23,10 @@ export default class FooterGuide extends Component {
           <Route path="/personal" component={Personal} />
           <Redirect to="/main" />
         </Switch>
-        <ul className="footerList">
+        <ul
+          className="footerList"
+          style={{ visibility: isShow ? 'hidden' : 'visible' }}
+        >
           <li className="footerItem">
             <NavLink
               to="/main"
@@ -76,3 +84,4 @@ export default class FooterGuide extends Component {
     )
   }
 }
+export default withRouter(FooterGuide)

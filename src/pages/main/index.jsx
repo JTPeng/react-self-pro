@@ -507,7 +507,10 @@ export default class Main extends Component {
 	}
   toTop = () => {
     document.documentElement.scrollTop = 0
-  }
+	}
+	goToSearch=()=>{
+		this.props.hostory.push('/search')
+	}
   render() {
     const tabs = [
       { title: '推荐' },
@@ -532,7 +535,7 @@ export default class Main extends Component {
         <header className="mainHeader">
           <div className="headerTop">
             <h1 className="logo">网易严选</h1>
-            <input type="text" placeholder="搜索商品,共21622款好物" />
+            <input type="text" placeholder="搜索商品,共21622款好物" onClick={this.goToSearch} />
             <div className="login">登 陆</div>
           </div>
           <div className="nav">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Split from '../../components/split'
 import BScroll from 'better-scroll'
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
 import CategoryDetail from '../../components/categoryDetail/'
@@ -52,7 +51,7 @@ export default class Category extends Component {
                 <li className="navItem" key={index}>
                   <NavLink
                     to={`/category/categoryDetail/${navList.id}`}
-                    activeStyle={{ color: 'red', borderLeft: '1px solid red' }}
+                    activeStyle={{ color: 'red', borderLeft: '1px solid red'}}
                   >
                     {navList.title}
                   </NavLink>
