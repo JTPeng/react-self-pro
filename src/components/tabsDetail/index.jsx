@@ -66,7 +66,7 @@ export default class tabsDetail extends Component {
     ]
   }
   async componentDidMount() {
-    const res = await reqComment('/topic/v1/find/recAuto.json')
+    const res = await reqComment('/topic/v1/find/recAuto.json',1,5)
     if (res.code === '200') {
       this.setState({
         // comments: res.data.result
@@ -83,7 +83,7 @@ export default class tabsDetail extends Component {
     const { id } = this.props.match.params
     // console.log(id)
     const comments = this.state.comments.find(item => item.id === +id)
-    // console.log(comments)
+    console.log(comments)
     /* const { comments } = this.state
 		console.log(comments) */
 		if (!comments) return null

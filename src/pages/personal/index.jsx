@@ -5,30 +5,31 @@ export default class Personal extends Component {
     loginWays: true,
     phoneLogin: false,
     emailLogin: false,
-    pwdLogin: false
+    pwdLogin: false,
+    seconds: 0
   }
   phoneLogin = () => {
     this.setState({
       loginWays: false,
-			phoneLogin: true,
-			emailLogin: false,
-    pwdLogin: false
+      phoneLogin: true,
+      emailLogin: false,
+      pwdLogin: false
     })
   }
   emailLogin = () => {
     this.setState({
-			emailLogin: true,
-			loginWays: false,
-			pwdLogin: false,
-			phoneLogin: false,
+      emailLogin: true,
+      loginWays: false,
+      pwdLogin: false,
+      phoneLogin: false
     })
   }
   otherWays = () => {
     this.setState({
       loginWays: true,
-			phoneLogin: false,
-			emailLogin: false,
-			pwdLogin: false
+      phoneLogin: false,
+      emailLogin: false,
+      pwdLogin: false
     })
   }
   pwdLogin = () => {
@@ -38,16 +39,31 @@ export default class Personal extends Component {
       loginWays: false,
       pwdLogin: true
     })
-	}
-	goToHome = () => {
-		this.props.history.push('/main')
-	}
-	goToShopCart = () => {
-		this.props.history.push('/shopcart')
-	}
+  }
+  goToHome = () => {
+    this.props.history.push('/main')
+  }
+  goToShopCart = () => {
+    this.props.history.push('/shopcart')
+  }
+  sendCode = () => {
+		let seconds = this.state.seconds
+		seconds = 5
+		clearInterval(this.timeId)
+    this.timeId = setInterval(() => {
+      seconds--
+      this.setState({
+        seconds
+			})
+			console.log(seconds)
+      if (seconds <= 0) {
+        clearInterval(this.timeId)
+      }
+		}, 1000)
+  }
   render() {
-    console.log(this)
-    const { loginWays, phoneLogin, emailLogin, pwdLogin } = this.state
+    // console.log(this)
+    const { loginWays, phoneLogin, emailLogin, pwdLogin, seconds } = this.state
     return (
       <div>
         <div className="personalContainer">
@@ -67,11 +83,11 @@ export default class Personal extends Component {
               <a href="javascript:;">
                 <i
                   className="iconfont icon-search "
-									style={{ fontSize: '22px', marginRight: '10px'}}
-									onClick={()=>this.props.history.push('/search')}
+                  style={{ fontSize: '22px', marginRight: '10px' }}
+                  onClick={() => this.props.history.push('/search')}
                 />
                 <i
-									onClick={this.goToShopCart}
+                  onClick={this.goToShopCart}
                   className="iconfont icon-shopCart "
                   style={{ fontSize: '22px', marginRight: '10px' }}
                 />
@@ -116,7 +132,7 @@ export default class Personal extends Component {
             {/* 手机登录 */}
             <div className={phoneLogin ? 'phoneLogin' : 'phoneLogin on'}>
               <div className="phoneBg" />
-              <form className="login">
+              <form className="login" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="text"
                   placeholder="请输入手机号"
@@ -124,7 +140,7 @@ export default class Personal extends Component {
                 />
                 <div className="password">
                   <input type="text" placeholder="请输入短信验证码" />
-                  <span>获取验证码</span>
+                  <button disabled={seconds>0?true:false} onClick={this.sendCode}>{seconds > 0?`已发送(${seconds}s)`:'获取验证码'}</button>
                 </div>
                 <div className="loginText">
                   <span className="loginProblem">遇到问题?</span>
@@ -176,7 +192,9 @@ export default class Personal extends Component {
                 <input type="text" placeholder="密码" className="password" />
                 <div className="loginText">
                   <span>忘记密码</span>
-                  <span className="emailLogin" onClick={this.phoneLogin}>短信快捷登录</span>
+                  <span className="emailLogin" onClick={this.phoneLogin}>
+                    短信快捷登录
+                  </span>
                 </div>
                 <input type="submit" value="登录" className="loginSub" />
               </form>

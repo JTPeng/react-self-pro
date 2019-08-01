@@ -137,7 +137,8 @@
   height: 50px;
   border-bottom: 1px solid #eee;
 }
-.personalContainer .perContent .phoneLogin .login .password span {
+.personalContainer .perContent .phoneLogin .login .password button {
+  background-color: #fff;
   display: inline-block;
   width: 30%;
   height: 30px;

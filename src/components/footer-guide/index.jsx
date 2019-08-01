@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect, NavLink, withRouter } from 'react-router-dom'
-import Main from '../../pages/main/index'
+/* import Main from '../../pages/main/index'
 import Personal from '../../pages/personal/index'
 import ShopCart from '../../pages/shop-cart/index'
 import Topic from '../../pages/topic/index'
-import Category from '../../pages/category/index'
+import Category from '../../pages/category/index' */
 import './index.css'
 class FooterGuide extends Component {
   render() {
     const { pathname } = this.props.location
-    console.log(pathname)
+    // console.log(pathname)
     return (
       <div>
         {/* <Switch>

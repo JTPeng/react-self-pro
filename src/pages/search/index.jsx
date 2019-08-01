@@ -49,18 +49,20 @@ export default class Search extends Component {
         })
         console.log(this.state.searchCotentLsts)
       }
-    } else {
-      this.setState({
-        searchCotentLsts: []
-      })
-    }
-	}
-	/* 清空文本框内容 */
-	clearContent = () => {
-		this.setState({
-			searchCotent: ''
-		})
-	}
+		} 
+		if(searchCotent === ''){
+			console.log(1)
+			this.setState({
+				searchCotentLsts:[]
+			})
+		}
+  }
+  /* 清空文本框内容 */
+  clearContent = () => {
+    this.setState({
+      searchCotent: ''
+    })
+  }
   render() {
     const { searchCotent, searchCotentLsts } = this.state
     return (
@@ -68,7 +70,11 @@ export default class Search extends Component {
         <div className="searchContainer">
           <header className="scHeader">
             <div className="schTop">
-              <i className="iconfont icon-cha" style={{display:searchCotent?'block':'none'}} onClick={this.clearContent}/>
+              <i
+                className="iconfont icon-cha"
+                style={{ display: searchCotent ? 'block' : 'none' }}
+                onClick={this.clearContent}
+              />
               <input
                 type="text"
                 placeholder="颜值款电蚊拍"
@@ -101,7 +107,8 @@ export default class Search extends Component {
             <ul
               className="searchContent"
               style={{
-                display: searchCotentLsts.length > 0 ? 'block' : 'none'
+                display:
+                  searchCotent && searchCotentLsts.length > 0 ? 'block' : 'none'
               }}
             >
               {searchCotentLsts.map((searchCotent, index) => (
@@ -117,7 +124,9 @@ export default class Search extends Component {
           <Split />
           <section
             className="hotSearch"
-            style={{ display: !searchCotentLsts.length > 0 ? 'block' : 'none' }}
+            style={{
+              display: searchCotent && searchCotentLsts.length > 0 ? 'none' : 'block'
+            }}
           >
             <div className="hsTitle">热门搜索</div>
             <ul className="searchList">
