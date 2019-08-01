@@ -38,7 +38,13 @@ export default class Personal extends Component {
       loginWays: false,
       pwdLogin: true
     })
-  }
+	}
+	goToHome = () => {
+		this.props.history.push('/main')
+	}
+	goToShopCart = () => {
+		this.props.history.push('/shopcart')
+	}
   render() {
     console.log(this)
     const { loginWays, phoneLogin, emailLogin, pwdLogin } = this.state
@@ -47,7 +53,7 @@ export default class Personal extends Component {
         <div className="personalContainer">
           <header className="perHeader">
             <div className="perHome">
-              <a href="javascript:;">
+              <a href="javascript:;" onClick={this.goToHome}>
                 <i
                   className="iconfont icon-home"
                   style={{ fontSize: '22px' }}
@@ -64,6 +70,7 @@ export default class Personal extends Component {
                   style={{ fontSize: '22px', marginRight: '10px' }}
                 />
                 <i
+									onClick={this.goToShopCart}
                   className="iconfont icon-shopCart "
                   style={{ fontSize: '22px', marginRight: '10px' }}
                 />

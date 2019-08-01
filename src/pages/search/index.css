@@ -1,0 +1,119 @@
+.searchContainer {
+  width: 100%;
+  background-color: #fff;
+/* 热门搜索 */
+}
+.searchContainer .scHeader {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+/* 头顶部 */
+/* 头底部 */
+/* 111 */
+}
+.searchContainer .scHeader .schTop {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.searchContainer .scHeader .schTop i {
+  position: absolute;
+  top: 7px;
+  right: 60px;
+  color: #ccc;
+}
+.searchContainer .scHeader .schTop input {
+  width: 85%;
+  background-color: #eee;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px 10px 5px 30px;
+  background-image: url("./images/search.png");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position-y: center;
+  background-position-x: 10px;
+}
+.searchContainer .scHeader .schTop .scCancel {
+  width: 15%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+}
+.searchContainer .scHeader .schBottom {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 4px;
+}
+.searchContainer .scHeader .schBottom .scHistory {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d7d7d7;
+  font-size: 18px;
+}
+.searchContainer .scHeader .schBottom .scHistory i {
+  color: #666;
+  font-size: 18px;
+}
+.searchContainer .scHeader .schBottom .historyList {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchContainer .scHeader .schBottom .historyList .historyItem {
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+.searchContainer .scHeader .searchContent {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  background-color: #fff;
+  left: 0;
+  top: 45px;
+}
+.searchContainer .scHeader .searchContent .contentItem {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+}
+.searchContainer .hotSearch {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.searchContainer .hotSearch .hsTitle {
+  width: 100%;
+  font-size: 16px;
+  color: #d7d7d7;
+  margin-bottom: 10px;
+}
+.searchContainer .hotSearch .searchList {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchContainer .hotSearch .searchList .searchItem {
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+.searchContainer .hotSearch .searchList .searchItem.on {
+  border: 1px solid #f00;
+}

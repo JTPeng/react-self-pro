@@ -117,12 +117,12 @@ export default class Main extends Component {
     kills: [],
     foods: [],
     loves: [],
-		mans: [],
-		show:false,
+    mans: [],
+    show: false,
     isShow: false
   }
   componentDidMount() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.setState({
         data: [swiper1, swiper2, swiper3, swiper2, swiper1],
         contentListPic: [
@@ -483,34 +483,37 @@ export default class Main extends Component {
       click: true,
       scrollX: true
     })
-	}
-	componentWillMount = () =>{
-		window.addEventListener('scroll',this.handleScroll,true)
-	}
-	// tabs显示隐藏
-	allShow=()=>{
-		this.setState({
-			isShow:!this.state.isShow,
-		})
-	}
-	handleScroll =() => {
-		let scrollTop = document.documentElement.scrollTop
-		if(scrollTop>100){
-			this.setState({
-				show:true
-			})
-		}else{
-			this.setState({
-				show:false
-			})
-		}
-	}
+  }
+  componentWillMount() {
+    window.addEventListener('scroll', this.handleScroll, true)
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+  // tabs显示隐藏
+  allShow = () => {
+    this.setState({
+      isShow: !this.state.isShow
+    })
+  }
+  handleScroll = () => {
+    let scrollTop = document.documentElement.scrollTop
+    if (scrollTop > 100) {
+      this.setState({
+        show: true
+      })
+    } else {
+      this.setState({
+        show: false
+      })
+    }
+  }
   toTop = () => {
     document.documentElement.scrollTop = 0
-	}
-	goToSearch=()=>{
-		this.props.hostory.push('/search')
-	}
+  }
+  goToSearch = () => {
+    this.props.history.push('/search')
+  }
   render() {
     const tabs = [
       { title: '推荐' },
@@ -535,35 +538,58 @@ export default class Main extends Component {
         <header className="mainHeader">
           <div className="headerTop">
             <h1 className="logo">网易严选</h1>
-            <input type="text" placeholder="搜索商品,共21622款好物" onClick={this.goToSearch} />
+						<input
+							type="text"
+							placeholder="搜索商品,共21622款好物"
+							onClick={this.goToSearch}
+						/>
             <div className="login">登 陆</div>
           </div>
           <div className="nav">
-						<div className="tabs">
-							<Tabs
-								tabBarActiveTextColor="red"
-								tabBarUnderlineStyle={{ borderColor: 'red' }}
-								tabBarTextStyle={{ fontSize: '16px' }}
-								tabs={tabs}
-								renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} />}
-							/>
-						</div>
-						<div className="tabsListContainer">
-							<div className="tabsListHeader">
-								<span className="all"  style={{visibility:isShow ? 'visible' : 'hidden'}}>全部频道</span>
-								<img onClick={this.allShow} className="arrows"  src={arrows} alt="arr"/>
-							</div>
-							<ul className="tabsList" style={{visibility:isShow ? 'visible' : 'hidden'}}>
-								{
-									tabs.map((item,index)=>{
-										return<li key={index} className="tabsItem">
-											<span>{item.title}</span>
-										</li>
-									})
-								}
-							</ul>
-							<div className="mask" style={{display:isShow ? 'block' : 'none'}} onClick={this.allShow}></div>
-						</div>
+            <div className="tabs">
+              <Tabs
+                tabBarActiveTextColor="red"
+                tabBarUnderlineStyle={{ borderColor: 'red' }}
+                tabBarTextStyle={{ fontSize: '16px' }}
+                tabs={tabs}
+                renderTabBar={props => (
+                  <Tabs.DefaultTabBar {...props} page={4} />
+                )}
+              />
+            </div>
+            <div className="tabsListContainer">
+              <div className="tabsListHeader">
+                <span
+                  className="all"
+                  style={{ visibility: isShow ? 'visible' : 'hidden' }}
+                >
+                  全部频道
+                </span>
+                <img
+                  onClick={this.allShow}
+                  className="arrows"
+                  src={arrows}
+                  alt="arr"
+                />
+              </div>
+              <ul
+                className="tabsList"
+                style={{ visibility: isShow ? 'visible' : 'hidden' }}
+              >
+                {tabs.map((item, index) => {
+                  return (
+                    <li key={index} className="tabsItem">
+                      <span>{item.title}</span>
+                    </li>
+                  )
+                })}
+              </ul>
+              <div
+                className="mask"
+                style={{ display: isShow ? 'block' : 'none' }}
+                onClick={this.allShow}
+              />
+            </div>
           </div>
         </header>
         <section className="content">
@@ -1023,17 +1049,17 @@ export default class Main extends Component {
             </ul>
           </div>
         </section>
-				{/* 底部 */}
-				<footer className="footer">
-					<div className="footerBtn">
-						<span>下载APP</span>
-						<span>电脑版</span>
-					</div>
-					<div className="footerText">
-						<p>网易公司版权所有&copy;1997-2019</p>
-						<p>食品经营许可证:JY13301080111719</p>
-					</div>
-				</footer>
+        {/* 底部 */}
+        <footer className="footer">
+          <div className="footerBtn">
+            <span>下载APP</span>
+            <span>电脑版</span>
+          </div>
+          <div className="footerText">
+            <p>网易公司版权所有&copy;1997-2019</p>
+            <p>食品经营许可证:JY13301080111719</p>
+          </div>
+        </footer>
       </div>
     )
   }

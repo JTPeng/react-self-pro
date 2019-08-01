@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import './index.css'
 export default class ShopCart extends Component {
+	goToLogin = () =>{
+		this.props.history.push('/personal')
+	}
   render() {
+		console.log(this)
     return (
       <div>
         <div className="shopCartContainer">
@@ -27,7 +31,7 @@ export default class ShopCart extends Component {
           <section className="scContent">
 						<div className="bcBtn">
 							<div className="bcImg" />
-							<div className="scButton">登录</div>
+							<div className="scButton" onClick={this.goToLogin}>登录</div>
 						</div>
           </section>
         </div>

@@ -1,0 +1,107 @@
+.searchContainer
+	width 100%
+	background-color: #ffffff
+	.scHeader
+		width 100%
+		box-sizing: border-box
+		padding: 10px
+		position relative
+		/* 头顶部 */
+		.schTop
+			width: 100%
+			display: flex
+			position relative
+			i
+				position: absolute
+				top: 7px
+				right 60px
+				color: #cccccc
+			input 
+				width 85%
+				background-color: #eeeeee
+				box-sizing: border-box
+				border-radius: 5px
+				height 30px
+				padding: 5px 10px 5px 30px
+				background-image: url('./images/search.png')
+				background-repeat: no-repeat
+				background-size: 18px
+				background-position-y: center
+				background-position-x: 10px
+			.scCancel
+				width 15%
+				height 30px
+				text-align: center
+				line-height: 30px
+				font-size: 18px
+		/* 头底部 */
+		.schBottom
+			width 100%
+			box-sizing: border-box
+			padding: 10px 4px
+			.scHistory
+				width 100%
+				display: flex
+				justify-content: space-between
+				align-items: center
+				color: #d7d7d7
+				font-size: 18px
+				i 
+					color: #666666
+					font-size: 18px
+			.historyList
+				width 100%
+				margin-top: 10px
+				display: flex
+				// justify-content: space-between
+				flex-wrap: wrap
+				.historyItem
+					text-align: center
+					margin-right: 16px
+					margin-bottom: 16px
+					border: 1px solid #cccccc
+					padding: 5px 10px
+					font-size: 16px
+		/* 111 */
+		.searchContent
+			position: absolute
+			width 100%
+			min-height: 100%
+			box-sizing: border-box
+			padding: 0 10px
+			background-color: #ffffff
+			left 0
+			top: 45px
+			.contentItem
+				width 100%
+				padding: 10px 0
+				font-size: 20px
+	/* 热门搜索 */
+	.hotSearch
+		width 100%
+		box-sizing: border-box
+		padding: 10px
+		.hsTitle
+			width 100%
+			font-size: 16px
+			color: #d7d7d7
+			margin-bottom: 10px
+		.searchList
+			width 100%
+			margin-top: 10px
+			display: flex
+			// justify-content: space-between
+			flex-wrap: wrap
+			.searchItem
+				text-align: center
+				margin-right: 16px
+				margin-bottom: 16px
+				border: 1px solid #cccccc
+				padding: 5px 10px 
+				font-size: 16px
+				&.on
+					border: 1px solid #f00
+
+
+
+

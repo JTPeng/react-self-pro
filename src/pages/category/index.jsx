@@ -25,9 +25,9 @@ export default class Category extends Component {
     ]
   }
   componentDidMount() {
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.setState({})
-    }, 1000)
+    }, 1000) */
     this.navList = new BScroll('.leftNav', {
       click: true,
       scrollY: true

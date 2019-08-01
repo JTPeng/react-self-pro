@@ -10,22 +10,20 @@ class FooterGuide extends Component {
   render() {
     const { pathname } = this.props.location
     console.log(pathname)
-    let isShow =( pathname === '/personal' || pathname ==='/shopcart') ? true : false
-    console.log(isShow)
-    console.log(pathname)
     return (
       <div>
-        <Switch>
+        {/* <Switch>
           <Route path="/main" component={Main} />
           <Route path="/category" component={Category} />
           <Route path="/topic" component={Topic} />
           <Route path="/shopcart" component={ShopCart} />
           <Route path="/personal" component={Personal} />
+					<Route to="/search" component={Search}/>
           <Redirect to="/main" />
-        </Switch>
+        </Switch> */}
         <ul
           className="footerList"
-          style={{ visibility: isShow ? 'hidden' : 'visible' }}
+          style={{ visibility: ( pathname === '/personal' || pathname ==='/shopcart' ||pathname ==='/search') ? 'hidden' : 'visible' }}
         >
           <li className="footerItem">
             <NavLink
