@@ -77,7 +77,7 @@ export default class Search extends Component {
               />
               <div
                 className="scCancel"
-                onClick={() => this.props.history.replace('/main')}
+                onClick={() => this.props.history.goBack()}
               >
                 取消
               </div>

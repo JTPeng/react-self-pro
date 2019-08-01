@@ -67,7 +67,8 @@ export default class Personal extends Component {
               <a href="javascript:;">
                 <i
                   className="iconfont icon-search "
-                  style={{ fontSize: '22px', marginRight: '10px' }}
+									style={{ fontSize: '22px', marginRight: '10px'}}
+									onClick={()=>this.props.history.push('/search')}
                 />
                 <i
 									onClick={this.goToShopCart}
